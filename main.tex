@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt,titlepage]{article}
+\usepackage{graphicx,float,tabularx,hyperref,subfiles}
+\graphicspath{{./}{images/}}
+\usepackage[sorting=nyt,style=authoryear-ibid,backend=biber]{biblatex}
+\hypersetup{
+colorlinks=true,
+urlcolor=cyan,
+linkcolor=black
+}
+\let\cite\textcite 
+\addbibresource{./bibliography.bib}
+\renewcommand\thesection{}
+\author{% add name in below list by adding your name then a \\
+baby-princess \\
+% <!!> \\
+The LaTeX source used can be found here: \\
+\url{https://github.com/baby-princess/offgrid-book.git}}
+\title{
+\titlehead{\centering\includegraphics[width=6cm]{CC-SA.png}}\\
+Offgridding book
+}
+\begin{document}
+\maketitle
+\begin{centering}
+\section{contents page}
+\end{centering}
+\tableofcontents
+\newpage
+\begin{centering}
+\section{Introduction}
+\end{centering}
+Going off the grid can be a daunting, process that seems nearly impossible, well we have a community of people, who can tell you its anything but that :).
+
+
+So join us in exploring the possible ways of going more off the grid, even if not full, but more indepent of the system.
+\newpage
+
+% add pages here like so
+% \subfile{./tex-files/file.tex}
+\subfile{tex-files/test.tex}
+
+
+\newpage
+\begin{centering}
+\section{Bibliography}
+\end{centering}
+\begin{refsection}
+% add citations here if you use a website like so
+% \nocte{<!!>}
+
+
+% be sure to also add the entery in the bibligrahpy.bib file so that latex detects it :)
+
+\printbibliography
+\end{refsection}
+\end{document}
