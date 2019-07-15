@@ -1,6 +1,10 @@
 \documentclass[a4paper,12pt,titlepage]{article}
-\usepackage{graphicx,float,tabularx,hyperref,subfiles}
+\usepackage{graphicx,float,tabularx,hyperref,subfiles,datetime}
 \graphicspath{{./}{images/}}
+\usepackage[style=listgroup,toc]{glossaries}
+\usepackage[dvipsnames]{xcolor}
+
+
 \usepackage[sorting=nyt,style=authoryear-ibid,backend=biber]{biblatex}
 \hypersetup{
 colorlinks=true,
@@ -10,17 +14,23 @@ linkcolor=black
 \let\cite\textcite 
 \addbibresource{./bibliography.bib}
 \renewcommand\thesection{}
-\author{% add name in below list by adding your name then a \\
-baby-princess \\
-% <!!> \\
-The LaTeX source used can be found here: \\
-\url{https://github.com/baby-princess/vegan-cookbook.git}}
-\title{
-\titlehead{\centering\includegraphics[width=6cm]{CC-SA.png}}\\
-Vegan cookbook
-}
+\renewcommand\thesubsection{}
 \begin{document}
-\maketitle
+\begin{titlepage}
+\centering\includegraphics[width=6cm]{CC-SA.png}\\
+	\vspace{1.5cm}
+	{\huge	vegan cookbook\par}
+	
+	{\large last compiled: \currenttime	-	\today\par}
+	\vspace{1cm}
+	{\large The \LaTeX source can be found here:\\	
+	\url{https://github.com/baby-princess/vegan-cookbook.git}\par}
+	\vspace{3cm}
+	{\large Authors:\par}
+	{\Large baby princess\\
+	\par}
+\end{titlepage}
+	\newpage
 \begin{centering}
 \section{contents page}
 \end{centering}
@@ -29,25 +39,53 @@ Vegan cookbook
 \begin{centering}
 \section{Introduction}
 \end{centering}
-Going vegan for some is a daunting task, this book contains delisous recpies which should help you along the way, or if you just want something new to try :).
+going vegan can be difficult for some, so we decided to share some of favroute recepies to help you along the way, or just to give you ideas for what to make :).
+
 \newpage
 
 % add pages here like so
-% \subfile{./tex-files/file.tex}
-\subfile{tex-files/test.tex}
+% \subfile{tex-files/file.tex}
 
+\begin{centering}
+	\section{milks}
+\end{centering}
+.
 
+\newpage
+\begin{centering}
+	\section{cheeses}
+\end{centering}
+.
+
+\begin{centering}
+	\section{savoury}
+\end{centering}
+.
+
+\newpage
+\begin{centering}
+	\section{baked goods}
+\end{centering}
+.
+
+\newpage
+\begin{centering}
+	\section{sweet treats}
+\end{centering}
+.
+
+\newpage
+\begin{centering}
+	\section{Glossary}
+\end{centering}
+.
+\printglossaries
 \newpage
 \begin{centering}
 \section{Bibliography}
 \end{centering}
 \begin{refsection}
-% add citations here if you use a website like so
-% \nocte{<!!>}
-
-
-% be sure to also add the entery in the bibligrahpy.bib file so that latex detects it :)
-
+\nocite{*}
 \printbibliography
 \end{refsection}
 \end{document}
